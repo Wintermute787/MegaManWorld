@@ -7,12 +7,13 @@ namespace MegaManWorld
 
   public class MegaPet
   {
-    private string Id {get;}
+    public string Id {get;}
     public string Name {get; set;}
     public int Bits {get; set;}
     public int Training {get; set;}
-    public int MaxHealth {get;}
-    public int Health {get;}
+    public int Power {get; set;}
+    public int EnergyCapacity {get; set;}
+    public int Energy {get; set;}
     public int Happiness {get; set;}
     public int Trauma {get; set;}
 
@@ -23,13 +24,36 @@ namespace MegaManWorld
       Name = name;
       Bits = 100;
       Training = 0;
-      MaxHealth = 100;
-      Health = 100;
+      EnergyCapacity = 100;
+      Energy = 100;
       Happiness = 50;
       Trauma = 0;
     }
 
 
+    public void Update()
+    {
+      if (Bits > 0 )
+        Bits -= 1;
+      else
+      {
+        if (Happiness > 0)
+          Happiness--;
+        if (Energy > 0)
+          Energy--;
+        else
+        {
+          if (EnergyCapacity > 10)
+          {
+            EnergyCapacity -= 10;
+            Energy = EnergyCapacity;
+          }
+          else
+          {
+            EnergyCapacity = 0;
+          }
+        }
+      }
+    }
   }
-
 }

@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Adventure
+namespace MegaManWorld
 {
   public class Program
   {
@@ -13,7 +13,7 @@ namespace Adventure
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();
-
+        ServerUpdate update = new ServerUpdate();
       host.Run();
     }
   }
