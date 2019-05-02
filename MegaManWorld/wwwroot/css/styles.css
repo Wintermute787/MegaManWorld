@@ -53,14 +53,12 @@ hr {
 }
 
 .btn-dark {
-  background-color: #062f4f;
-
-
+    background-color: rgba(6, 47, 79,0.76);
 }
-.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open>.dropdown-toggle.btn-dark {
-    background-color: #2d6591;
-    transform: scale(1.1);
-}
+    .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open > .dropdown-toggle.btn-dark {
+        background-color: rgba(45, 101, 145, 0.76);
+        transform: scale(1.1);
+    }
 
 .btn img {
   /* width: 300px; */
