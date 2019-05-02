@@ -91,3 +91,26 @@ hr {
   width: 100px;
   height: 100px;
 }
+
+.mSprite {
+    height: 150px;
+    width: 200px;
+    background-image: url(../img/SpriteGifs/dragonpunch.gif);
+ 
+    z-index: 900000;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.logoImg {
+    width: 50em;
+    align-self: center;
+}
+
+#worldCards {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,3 +1,5 @@
+
+
 $(function () {
 	$('#feed').click(function () {
 		$.post("/commandpet",
@@ -50,4 +52,12 @@ app.ticker.add((delta) => {
     // use delta to create frame-independent transform
     container.rotation -= 0.01 * delta;
 });
+    const anime = require('lib/anime.js');
+
+    anime({
+        targets: 'a',
+        translateX: 250,
+        duration: 3000
+    });
+ 
 });

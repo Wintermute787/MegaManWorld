@@ -1,4 +1,4 @@
-@using MegaManWorld;
+﻿@using MegaManWorld;
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -7,28 +7,37 @@
     <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="~/js/Animate.js"></script>
+    <script type="text/javascript" src="~/lib/anime.js"></script>
+    <script type="text/javascript" src="~/js/MegaMan.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="~/css/styles.css">
+    
   </head>
   <body>
 
+      <div class="logo">
+          <img class="logoImg"src="~/img/logo.png" />
+      </div>
 
+      <div id="worldCards" class="container">
 
-    <div class="container">
+          @foreach (MegaWorld world in MegaData.worlds)
+          {
+          <a href="/worlds/@world.Route" role="button" class="btn btn-dark">
+              <h2>@world.Name</h2>
+              <hr>
+              <img src="~/img/stages/@world.WorldImg" />
+              <div class="mSprite">
 
-      @foreach (MegaWorld world in MegaData.worlds)
-      {
-        <a href="/worlds/@world.Route" role="button" class="btn btn-dark">
-        <h2>@world.Name</h2>
-        <hr>
-          <img src="~/img/stages/@world.WorldImg"/>
-        </a>
-      }
+              </div>
+          </a>
+          }
 
-      @* <a href="/adventurebag" role="button" class="btn btn-dark"><h2>Adventure Bag</h2></a>
-      <a href="/stable" role="button" class="btn btn-dark"><h2>Stable</h2></a>
-      <a href="/noticeboard" role="button" class="btn btn-dark"><h2>Notice Board</h2></a>
-      <a href="/greenforce" role="button" class="btn btn-dark"><h2>Greenforce</h2><h2>Deliveries</h2></a> *@
-    </div>
+          @* <a href="/adventurebag" role="button" class="btn btn-dark"><h2>Adventure Bag</h2></a>
+            <a href="/stable" role="button" class="btn btn-dark"><h2>Stable</h2></a>
+            <a href="/noticeboard" role="button" class="btn btn-dark"><h2>Notice Board</h2></a>
+            <a href="/greenforce" role="button" class="btn btn-dark"><h2>Greenforce</h2><h2>Deliveries</h2></a> *@
+      </div>
+   
   </body>
 </html>
